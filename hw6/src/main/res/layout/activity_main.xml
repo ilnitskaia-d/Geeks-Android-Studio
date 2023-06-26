@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_hw6"
+        android:backgroundTint="@color/gray"
+        android:backgroundTintMode="multiply"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Вход"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="30dp"
+        />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/welcome_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginBottom="65dp"
+        >
+
+        <TextView
+            android:id="@id/text1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="30dp"
+            android:text="Добро пожаловать!"
+            app:layout_constraintBottom_toTopOf="@id/text2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+        <TextView
+            android:id="@id/text2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:text="Выполните вход \n или зарегистрируйтесь."
+            android:textAlignment="center"
+            app:layout_constraintTop_toBottomOf="@id/text1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/enter_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:cardBackgroundColor="@color/transparent"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginBottom="65dp"
+        >
+
+        <EditText
+            android:id="@+id/enter_mail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@id/enter_password"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="Введите вашу почту"
+            android:textSize="15dp"
+            android:padding="10dp"
+            android:textColor="@color/gray"
+            android:background="@drawable/text_edit_bg"
+            />
+
+        <EditText
+            android:id="@+id/enter_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@id/enter_button"
+            app:layout_constraintTop_toBottomOf="@id/enter_mail"
+            android:text="Введите пароль"
+            android:textSize="15dp"
+            android:padding="10dp"
+            android:layout_marginVertical="20dp"
+            android:textColor="@color/gray"
+            android:background="@drawable/text_edit_bg"
+            />
+
+        <Button
+            android:id="@+id/enter_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_inactive"
+            android:textSize="15dp"
+            android:text="Войти"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toTopOf="@id/password_help"
+            app:layout_constraintTop_toBottomOf="@id/enter_password"
+            android:layout_marginBottom="20dp"
+            />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/password_help"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            >
+
+            <TextView
+                android:id="@+id/text1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Забыл пароль?"
+                android:textSize="13dp"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toStartOf="@id/text2"
+                />
+
+            <TextView
+                android:id="@+id/text2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Востановить пароль"
+                android:textSize="13dp"
+                android:textColor="@color/brown"
+                app:layout_constraintStart_toEndOf="@id/text1"
+
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
