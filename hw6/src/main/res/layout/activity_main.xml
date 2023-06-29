@@ -101,7 +101,7 @@
             android:background="@drawable/text_edit_bg"
             />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/enter_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
