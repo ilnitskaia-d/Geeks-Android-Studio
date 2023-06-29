@@ -13,6 +13,8 @@ public class MainActivity extends AppCompatActivity {
         None,
         Plus,
         Minus,
+        Multiply,
+        Divide
     }
     private TextView textView;
     private Integer first, second;
@@ -134,11 +136,13 @@ public class MainActivity extends AppCompatActivity {
         }
         else if(view.getId() == R.id.divide_btn)
         {
-            //ToDo:divide action
+            first = Integer.valueOf(textView.getText().toString());
+            currOp = opStat.Divide;
         }
         else if(view.getId() == R.id.multiply_btn)
         {
-            //ToDo:multiply action
+            first = Integer.valueOf(textView.getText().toString());
+            currOp = opStat.Multiply;
         }
         else if(view.getId() == R.id.minus_btn)
         {
@@ -167,6 +171,10 @@ public class MainActivity extends AppCompatActivity {
                 return first + second;
             case Minus:
                 return first - second;
+            case Multiply:
+                return first * second;
+            case Divide:
+                return first / second;
             default:
                 throw new IllegalStateException("Unexpected value: " + currOp);
         }
