@@ -16,3 +16,4 @@ rootProject.name = "ClassWork"
 include ':app'
 include ':hw6'
 include ':Calculator'
+include ':classwork8'

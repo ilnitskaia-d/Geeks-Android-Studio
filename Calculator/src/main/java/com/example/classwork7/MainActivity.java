@@ -3,8 +3,12 @@ package com.example.classwork7;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -20,15 +24,28 @@ public class MainActivity extends AppCompatActivity {
     private Integer first, second;
     private opStat currOp;
     private boolean isOnOperation;
+    Button btn_menu;
 
+    public static Activity activity;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        activity = this;
+
         textView = findViewById(R.id.textView);
         isOnOperation = false;
         currOp = opStat.None;
+
+        btn_menu = findViewById(R.id.btn_menu);
+
+        btn_menu.setOnClickListener(view -> {
+            Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+            String text = textView.getText().toString();
+            intent.putExtra("text", text);
+            startActivity(intent);
+        });
     }
 
     void setNum(String n) {
@@ -44,7 +61,11 @@ public class MainActivity extends AppCompatActivity {
             textView.setText("0");
             currOp = opStat.None;
         } else if (textView.getText().toString().equals("0") || isOnOperation) {
-            if(view.getId() == R.id.one_btn)
+            if(view.getId() == R.id.zero_btn)
+            {
+                setNum("0");
+            }
+            else if(view.getId() == R.id.one_btn)
             {
                 setNum("1");
             }
@@ -123,6 +144,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         isOnOperation = false;
+        btn_menu.setVisibility(View.GONE);
     }
 
     public void onOperationClick(View view) {
@@ -159,8 +181,8 @@ public class MainActivity extends AppCompatActivity {
             second = Integer.valueOf(textView.getText().toString());
             textView.setText(Integer.toString(getResult()));
             currOp = opStat.None;
+            btn_menu.setVisibility(View.VISIBLE);
         }
-
         isOnOperation = true;
     }
     
