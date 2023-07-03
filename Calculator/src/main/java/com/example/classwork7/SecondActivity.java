@@ -2,9 +2,12 @@ package com.example.classwork7;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
+import android.os.Process;
+
 
 public class SecondActivity extends AppCompatActivity {
 
@@ -18,8 +21,7 @@ public class SecondActivity extends AppCompatActivity {
         textView.setText(text);
 
         findViewById(R.id.btn_exit).setOnClickListener(view -> {
-            MainActivity.activity.finish();
-            finish();
+            finishAffinity();
         });
     }
 }
