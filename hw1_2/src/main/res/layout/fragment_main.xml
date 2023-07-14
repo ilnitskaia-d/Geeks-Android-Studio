@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainFragment">
+
+    <LinearLayout
+        android:background="#A052D8"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="40sp"
+            android:textColor="@color/white"
+            android:textAlignment="center"
+            android:text="0"
+            android:id="@+id/tv"
+            android:layout_marginBottom="30dp"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/layout_btn"
+            android:gravity="center">
+            <Button
+                android:backgroundTint="@color/white"
+                android:textColor="#A052D8"
+                android:layout_width="100dp"
+                android:layout_height="80dp"
+                android:text="+1"
+                android:textSize="40dp"
+                android:id="@+id/btn_p"
+                android:layout_marginEnd="30dp"/>
+
+            <Button
+                android:backgroundTint="@color/white"
+                android:textColor="#A052D8"
+                android:layout_width="100dp"
+                android:layout_height="80dp"
+                android:text="-1"
+                android:textSize="40dp"
+                android:id="@+id/btn_m"
+                />
+
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>
