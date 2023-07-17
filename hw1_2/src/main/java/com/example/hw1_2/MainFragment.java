@@ -15,6 +15,8 @@ import android.widget.TextView;
 public class MainFragment extends Fragment {
     Button btn_p, btn_m;
     TextView tv;
+
+    int n;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -30,6 +32,7 @@ public class MainFragment extends Fragment {
     }
 
     void Init() {
+        n = 0;
         btn_p = requireActivity().findViewById(R.id.btn_p);
         btn_m = requireActivity().findViewById(R.id.btn_m);
         tv = requireActivity().findViewById(R.id.tv);
@@ -37,12 +40,10 @@ public class MainFragment extends Fragment {
 
     void InitClick() {
         btn_p.setOnClickListener(view-> {
-            int n = Integer.parseInt(tv.getText().toString());
             tv.setText(String.valueOf(++n));
         });
 
         btn_m.setOnClickListener(view-> {
-            int n = Integer.parseInt(tv.getText().toString());
             tv.setText(String.valueOf(--n));
         });
     }
